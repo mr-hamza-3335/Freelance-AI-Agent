@@ -43,7 +43,8 @@ export default function GeneratorPage() {
       }
 
       const data = await response.json()
-      setOutput(data.proposal || "Generated proposal content would appear here...")
+      setOutput(data.final_output || "Generated proposal content would appear here...")
+
     } catch (error) {
       // Fallback demo content when API is not available
       const demoProposal = `# Project Proposal for ${type} Development
