@@ -1,0 +1,333 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens for futuristic AI dark theme */
+  --background: oklch(0.063 0.024 264.376); /* Deep navy #0a0a1f */
+  --foreground: oklch(1 0 0); /* Pure white */
+  --card: oklch(0 0 0); /* Pure black */
+  --card-foreground: oklch(1 0 0); /* White text on cards */
+  --popover: oklch(0.106 0.024 264.376); /* Dark gray #1a1a2e */
+  --popover-foreground: oklch(1 0 0); /* White text for popovers */
+  --primary: oklch(0.7 0.2 200); /* Glowing blue #00c4ff */
+  --primary-foreground: oklch(0 0 0); /* Black text for primary buttons */
+  --secondary: oklch(0.7 0.2 200); /* Secondary matching primary */
+  --secondary-foreground: oklch(0 0 0); /* Black text for secondary */
+  --muted: oklch(0.106 0.024 264.376); /* Muted dark gray */
+  --muted-foreground: oklch(1 0 0); /* White text for muted */
+  --accent: oklch(0.7 0.2 200); /* Glowing blue accent */
+  --accent-foreground: oklch(0.7 0.2 200); /* Black text for accents */
+  --destructive: oklch(0.577 0.245 27.325); /* Red for errors */
+  --destructive-foreground: oklch(1 0 0); /* White text for destructive */
+  --border: oklch(0.106 0.024 264.376); /* Dark gray borders */
+  --input: oklch(0.106 0.024 264.376); /* Dark input backgrounds */
+  --ring: oklch(0.7 0.2 200); /* Glowing blue focus rings */
+  --chart-1: oklch(0.7 0.2 200);
+  --chart-2: oklch(0.7 0.2 200);
+  --chart-3: oklch(0.106 0.024 264.376);
+  --chart-4: oklch(0.577 0.245 27.325);
+  --chart-5: oklch(1 0 0);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.063 0.024 264.376);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.106 0.024 264.376);
+  --sidebar-primary-foreground: oklch(0.7 0.2 200);
+  --sidebar-accent: oklch(0.7 0.2 200);
+  --sidebar-accent-foreground: oklch(0 0 0);
+  --sidebar-border: oklch(0.106 0.024 264.376);
+  --sidebar-ring: oklch(0.7 0.2 200);
+}
+
+.dark {
+  /* Dark mode uses same futuristic theme */
+  --background: oklch(0.063 0.024 264.376);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0 0 0);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.106 0.024 264.376);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(0.7 0.2 200);
+  --primary-foreground: oklch(0 0 0);
+  --secondary: oklch(0.7 0.2 200);
+  --secondary-foreground: oklch(0 0 0);
+  --muted: oklch(0.106 0.024 264.376);
+  --muted-foreground: oklch(1 0 0);
+  --accent: oklch(0.7 0.2 200);
+  --accent-foreground: oklch(0.7 0.2 200);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.106 0.024 264.376);
+  --input: oklch(0.106 0.024 264.376);
+  --ring: oklch(0.7 0.2 200);
+  --chart-1: oklch(0.7 0.2 200);
+  --chart-2: oklch(0.7 0.2 200);
+  --chart-3: oklch(0.106 0.024 264.376);
+  --chart-4: oklch(0.577 0.245 27.325);
+  --chart-5: oklch(1 0 0);
+  --sidebar: oklch(0.063 0.024 264.376);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.106 0.024 264.376);
+  --sidebar-primary-foreground: oklch(0.7 0.2 200);
+  --sidebar-accent: oklch(0.7 0.2 200);
+  --sidebar-accent-foreground: oklch(100% 0.00011 271.152);
+  --sidebar-border: oklch(0.106 0.024 264.376);
+  --sidebar-ring: oklch(0.7 0.2 200);
+}
+
+@theme inline {
+  /* Updated font to Inter instead of Geist */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    /* Added proper overflow handling for responsive design */
+    overflow-x: hidden;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  /* Added responsive container utilities */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .container {
+      max-width: 1536px;
+    }
+  }
+
+  /* Added high contrast utilities for accessibility */
+  .text-high-contrast {
+    color: oklch(1 0 0); /* Pure white for maximum contrast */
+  }
+
+  .bg-high-contrast {
+    background-color: oklch(0 0 0); /* Pure black for maximum contrast */
+  }
+
+  /* Improved badge contrast */
+  .badge-high-contrast {
+    background-color: oklch(0.7 0.2 200 / 0.15);
+    border-color: oklch(0.7 0.2 200 / 0.6);
+    color: oklch(1 0 0);
+  }
+}
+
+/* Added custom animations and effects for futuristic theme */
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 2px oklch(0.7 0.2 200 / 0.3), 0 0 4px oklch(0.7 0.2 200 / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 4px oklch(0.7 0.2 200 / 0.4), 0 0 8px oklch(0.7 0.2 200 / 0.3);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.glow-effect {
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+.glow-effect-hover:hover {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.float-effect {
+  animation: float 4s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Added responsive utilities */
+@media (max-width: 768px) {
+  .glow-effect {
+    animation: none;
+  }
+
+  .float-effect {
+    animation: none;
+  }
+}
+
+/* Particle background styles */
+.particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  /* Added overflow hidden to prevent horizontal scroll */
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  background: oklch(0.7 0.2 200);
+  border-radius: 50%;
+  opacity: 0.05;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Added responsive design utilities */
+.responsive-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-container {
+    padding: 0 2rem;
+  }
+}
+
+/* Added responsive text utilities */
+@media (max-width: 640px) {
+  .text-responsive-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .text-responsive-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .text-responsive-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+/* Added responsive spacing utilities */
+.section-padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
